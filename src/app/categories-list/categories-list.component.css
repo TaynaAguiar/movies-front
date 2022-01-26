@@ -1,0 +1,16 @@
+@media (min-width: 768px) {
+  .btn-button {
+    width: 360px;
+  }
+}
+
+@media (min-width: 992px) {
+  .table-responsive {
+    font-size: 1.3rem;
+  }
+}
+
+button{
+    margin-right: 4px;
+    margin-left: 4px;
+}

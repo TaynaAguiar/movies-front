@@ -1,0 +1,28 @@
+<app-menu></app-menu>
+<div class="table-responsive">
+  <table class="table table-borderless d-flex align-items-center flex-column">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let c of listCategory" class="row">
+      <tr>
+        <th scope="row"></th>
+        <td>{{ c.id }}</td>
+        <td>{{ c.name }}</td>
+        <td>{{ c.language.tag }}</td>
+        <td>
+          <a class="btn btn-outline-dark" style="margin-bottom: 0.3rem" [routerLink]="['/movies-categories-update/' + c.id]">Edit</a>
+        </td>
+        <td>
+          <a class="btn btn-outline-dark" style="margin-bottom: 0.3rem" (click)="deleteCategory(c.id)">Delete</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-center">
+  <button class="btn-button btn btn-dark" type="button" [routerLink]="['/movies-categories-register']">New Categorie</button>
+</div>
+

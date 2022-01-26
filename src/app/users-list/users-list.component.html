@@ -1,0 +1,26 @@
+<app-menu></app-menu>
+<div class="table-responsive">
+  <table class="table table-borderless d-flex align-items-center flex-column">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let u of listUsers" class="row">
+      <tr>
+        <th scope="row"></th>
+        <td>{{ u.name }}</td>
+        <td>{{ u.email }}</td>
+        <td>{{ u.cellPhone }}</td>
+        <td>{{ u.profile }}</td>
+        <td>{{ u.language.tag }}</td>
+        <td>
+          <a class="btn btn-outline-dark" style="margin-bottom: 0.3rem" [routerLink]="['/movies-users-update/' + u.id]">Edit</a>
+        </td>
+        <td>
+          <a class="btn btn-outline-dark" style="margin-bottom: 0.3rem" (click)="deleteUsers(u.id)">Delete</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

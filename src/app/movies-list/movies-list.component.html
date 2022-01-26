@@ -1,0 +1,38 @@
+
+
+
+<!--SLIDER --->
+
+<div id="slider">
+  <div class="mt-3 container">
+    <div class="movies row align-items-start">
+      <div
+        *ngFor="let m of listMovies"
+        class="col-md-4 align-self-center px-1 py-1"
+      >
+        <img src="{{ m.image }}" class="img img-responsive" />
+        <h1>{{ m.title }}</h1>
+        <h6 class="mb-2">
+          {{ m.duration }} / {{ m.category.name }} / {{ m.date }} /
+          {{ m.language.tag }}
+        </h6>
+        <h6 class="synopsis mb-2">{{ m.synopsis }}</h6>
+        <a
+          [routerLink]="['/movies-details/' + m.id]"
+          class="btn btn-outline-dark"
+          >Learn more</a
+        >
+        <a
+          [routerLink]="['/movies-update/' + m.id]"
+          class="btn btn-outline-dark" style = "margin-left: 5px"
+          >Edit</a
+        >
+        <a
+          (click)="deleteMovie(m.id)"
+          class="btn btn-outline-dark" style = "margin-left: 5px"
+          >Delete</a
+        >
+      </div>
+    </div>
+  </div>
+</div>

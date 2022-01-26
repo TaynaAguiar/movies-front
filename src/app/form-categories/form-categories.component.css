@@ -1,0 +1,21 @@
+@media (min-width: 768px) {
+  .formCategory {
+    width: 100%;
+    padding-left: 20%;
+    padding-right: 20%;
+    justify-content: center;
+  }
+}
+
+h1 {
+  padding-left: 20% !important;
+  padding-right: 20% !important;
+  text-align: center;
+  margin-top: revert;
+}
+
+.form-button {
+  justify-content: flex-end !important;
+  display: flex;
+  margin-top: 0.3rem;
+}

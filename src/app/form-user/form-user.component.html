@@ -1,0 +1,100 @@
+<app-menu></app-menu>
+<h1 class="container" *ngIf="!userId"><strong>New User</strong></h1>
+<h1 class="container" *ngIf="userId"><strong>Edit User</strong></h1>
+<form class="formUser container" [formGroup]="postUsers">
+  <div class="form-user">
+    <label for="name">Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="name"
+      placeholder="name"
+      formControlName="name"
+    />
+  </div>
+  <div class="form-user">
+    <label for="cpf">Cpf</label>
+    <input
+      class="form-control"
+      pattern="(\d{3}\.?\d{3}\.?\d{3}-?\d{2})"
+      id="cpf"
+      placeholder="cpf"
+      formControlName="cpf"
+    />
+  </div>
+  <div class="form-user">
+    <label for="cellPhone">CellPhone</label>
+    <input
+      type="tel"
+      class="form-control"
+      id="cellPhone"
+      placeholder="cellPhone"
+      formControlName="cellPhone"
+    />
+  </div>
+  <div class="form-user">
+    <label for="email">Email</label>
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      placeholder="email"
+      formControlName="email"
+    />
+  </div>
+  <div class="form-user">
+    <label for="password">Password</label>
+    <input
+      type="password"
+      class="form-control"
+      id="password"
+      placeholder="password"
+      formControlName="password"
+    />
+  </div>
+  <div class="form-user">
+    <label for="profile">profile</label>
+    <select
+      class="form-control"
+      name="profile"
+      id="profile"
+      formControlName="profile"
+    >
+      <option value="" selected>Choose the Profile</option>
+      <option ngValue="ADMINISTRATOR">ADMINISTRATOR</option>
+       <option ngValue="VISITOR">VISITOR</option>
+    </select>
+  </div>
+  <div class="form-user">
+    <label for="language">Language</label>
+    <select
+      [compareWith]="compareFn"
+      class="form-control"
+      name="language"
+      id="language"
+      formControlName="language"
+    >
+      <option value="" selected>Choose the Language</option>
+      <option *ngFor="let l of listLanguages" [ngValue]="l">{{ l.tag }}</option>
+    </select>
+  </div>
+  <div class="form-button form-movie">
+    <button
+      type="button"
+      class="btn btn-dark"
+      (click)="postUser()"
+      *ngIf="!userId"
+    >
+      Saved
+    </button>
+
+    <button
+      type="button"
+      class="btn btn-dark"
+      (click)="putUsers()"
+      *ngIf="userId"
+    >
+      Edit
+    </button>
+  </div>
+</form>

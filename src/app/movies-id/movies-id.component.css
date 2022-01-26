@@ -1,0 +1,16 @@
+@media (min-width: 992px) {
+  h1{
+     font-size: 4.5rem;
+  }
+  h6 {
+    font-size: 1.2rem;
+  }
+}
+
+.img {
+  max-width: 100%;
+}
+
+body{
+  width: 100%;
+}

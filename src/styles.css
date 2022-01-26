@@ -1,0 +1,10 @@
+body,
+html {
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: lightgray;
+}
+
+:root {
+  --primary: #000;
+  --secondary: #FFFFFF;
+} 

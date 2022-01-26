@@ -1,0 +1,47 @@
+<app-menu></app-menu>
+<h1 class="container" *ngIf="!categoriesId"><strong>New Category</strong></h1>
+<h1 class="container" *ngIf="categoriesId"><strong>Edit Category</strong></h1>
+<form class="formCategory container" [formGroup]="postCategories">
+  <div class="form-category">
+    <label for="name">Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="name"
+      placeholder="name"
+      formControlName="name"
+    />
+  </div>
+  <div class="form-category">
+    <label for="language">Language</label>
+    <select
+      [compareWith]="compareFn"
+      class="form-control"
+      name="language"
+      id="language"
+      formControlName="language"
+    >
+      <option value="" selected>Choose the Language</option>
+      <option *ngFor="let l of listLanguages" [ngValue]="l">{{ l.tag }}</option>
+    </select>
+  </div>
+<div class="form-button form-category">
+    <button
+      type="button"
+      class="btn btn-dark"
+      (click)="postCategory()"
+      *ngIf="!categoriesId"
+    >
+      Saved
+    </button>
+  
+    <button
+      type="button"
+      class="btn btn-dark"
+      (click)="putCategory()"
+      *ngIf="categoriesId"
+    >
+      Edit
+    </button>
+</div>
+</form>

@@ -1,0 +1,49 @@
+@media (min-width: 768px) {
+  #header .navbar-collapse {
+    width: 100%;
+  }
+}
+
+#hearder {
+  width: 100%;
+  background-color: var(--secondary);
+  transition: background aese-out 0.2s;
+}
+
+#header .navbar-collapse {
+  width: auto;
+
+}
+
+#header .nav-link {
+  text-transform: capitalize;
+  font-weight: 500;
+  color: var(--secondary);
+  border-bottom: solid 4px transparent;
+}
+
+#header .nav-link:hover {
+  border-bottom: solid 4px var(--secondary);
+  color: var(--secondary)
+}
+
+#header .navbar-brand {
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--secondary);
+  border-bottom: solid 4px transparent;
+  margin-left: 0;
+}
+
+#header .navbar {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+
+#header .menu {
+  color: var(--secondary)
+}
+
+.teste:focus-visible {
+  color: red !important;
+}

@@ -1,0 +1,21 @@
+@media (min-width: 768px) {
+  .formMovie {
+    width: 100%;
+    padding-left: 15%;
+    padding-right: 15%;
+    justify-content: center;
+  }
+}
+
+h1 {
+  padding-left: 15% !important;
+  padding-right: 15% !important;
+  text-align: center;
+  margin-top: revert;
+}
+
+.form-button {
+  justify-content: flex-end !important;
+  display: flex;
+  margin-top: 0.3rem;
+}
