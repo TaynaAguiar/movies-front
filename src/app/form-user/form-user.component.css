@@ -19,3 +19,8 @@ h1 {
   display: flex;
   margin-top: 0.3rem;
 }
+
+.valid {
+ color: #842029;
+ font-style: italic;
+}

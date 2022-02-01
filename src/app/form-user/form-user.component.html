@@ -1,9 +1,12 @@
-<app-menu></app-menu>
-<h1 class="container" *ngIf="!userId"><strong>New User</strong></h1>
-<h1 class="container" *ngIf="userId"><strong>Edit User</strong></h1>
+<h1 class="container" *ngIf="!userId" tabindex="0">
+  <strong>New User</strong>
+</h1>
+<h1 class="container" *ngIf="userId" tabindex="0">
+  <strong>Edit User</strong>
+</h1>
 <form class="formUser container" [formGroup]="postUsers">
   <div class="form-user">
-    <label for="name">Name</label>
+    <label for="name" tabindex="0">Name</label>
     <input
       type="text"
       class="form-control"
@@ -11,29 +14,60 @@
       placeholder="name"
       formControlName="name"
     />
+    <div class="valid">
+      <span
+        *ngIf="
+          postUsers.controls['name'].dirty &&
+          postUsers.hasError('required', 'name')
+        "
+        >Name is required</span
+      >
+    </div>
+    <div class="valid">
+      <span *ngIf="postUsers.hasError('minlength', 'name')"
+        >Name must be at least 3 characters long.</span
+      >
+    </div>
   </div>
   <div class="form-user">
-    <label for="cpf">Cpf</label>
+    <label for="cpf" tabindex="0">Cpf</label>
     <input
       class="form-control"
-      pattern="(\d{3}\.?\d{3}\.?\d{3}-?\d{2})"
       id="cpf"
       placeholder="cpf"
       formControlName="cpf"
     />
+    <div class="valid">
+      <span
+        *ngIf="
+          postUsers.controls['cpf'].dirty &&
+          postUsers.hasError('required', 'cpf')
+        "
+        >CPF is required</span
+      >
+    </div>
   </div>
   <div class="form-user">
-    <label for="cellPhone">CellPhone</label>
+    <label for="cellPhone" tabindex="0">CellPhone</label>
     <input
-      type="tel"
       class="form-control"
       id="cellPhone"
       placeholder="cellPhone"
       formControlName="cellPhone"
     />
+    <div class="valid">
+    <span
+      class="valid"
+      *ngIf="
+        postUsers.controls['cellPhone'].dirty &&
+        postUsers.hasError('required', 'cellPhone')
+      "
+      >CellPhone is required</span
+    >
+    </div>
   </div>
   <div class="form-user">
-    <label for="email">Email</label>
+    <label for="email" tabindex="0">Email</label>
     <input
       type="email"
       class="form-control"
@@ -41,9 +75,22 @@
       placeholder="email"
       formControlName="email"
     />
+    <span
+      class="valid"
+      *ngIf="
+        postUsers.controls['email'].dirty &&
+        postUsers.hasError('required', 'email')
+      "
+      >Email is required</span
+    >
+    <div class="valid">
+      <span *ngIf="postUsers.hasError('email', 'email')"
+        >Email invalid</span
+      >
+    </div>
   </div>
   <div class="form-user">
-    <label for="password">Password</label>
+    <label for="password" tabindex="0">Password</label>
     <input
       type="password"
       class="form-control"
@@ -51,9 +98,22 @@
       placeholder="password"
       formControlName="password"
     />
+    <span
+      class="valid"
+      *ngIf="
+        postUsers.controls['password'].dirty &&
+        postUsers.hasError('required', 'password')
+      "
+      >Password is required</span
+    >
+    <div class="valid">
+      <span *ngIf="postUsers.hasError('minlength', 'password')"
+        >Password must be at least 6 characters long.</span
+      >
+    </div>
   </div>
   <div class="form-user">
-    <label for="profile">profile</label>
+    <label for="profile" tabindex="0">profile</label>
     <select
       class="form-control"
       name="profile"
@@ -62,11 +122,19 @@
     >
       <option value="" selected>Choose the Profile</option>
       <option ngValue="ADMINISTRATOR">ADMINISTRATOR</option>
-       <option ngValue="VISITOR">VISITOR</option>
+      <option ngValue="VISITOR">VISITOR</option>
     </select>
+<span
+      class="valid"
+      *ngIf="
+        postUsers.controls['profile'].dirty &&
+        postUsers.hasError('required', 'profile')
+      "
+      >Profile is required</span
+    >
   </div>
   <div class="form-user">
-    <label for="language">Language</label>
+    <label for="language" tabindex="0">Language</label>
     <select
       [compareWith]="compareFn"
       class="form-control"
@@ -77,6 +145,14 @@
       <option value="" selected>Choose the Language</option>
       <option *ngFor="let l of listLanguages" [ngValue]="l">{{ l.tag }}</option>
     </select>
+    <span
+      class="valid"
+      *ngIf="
+        postUsers.controls['language'].dirty &&
+        postUsers.hasError('required', 'language')
+      "
+      >Language is required</span
+    >
   </div>
   <div class="form-button form-movie">
     <button

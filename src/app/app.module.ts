@@ -16,7 +16,6 @@ import { UsersListComponent } from './users-list/users-list.component';
 import { FormUserComponent } from './form-user/form-user.component';
 import { AccessibilityComponent } from './accessibility/accessibility.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

@@ -1,17 +1,15 @@
-<app-menu></app-menu>
-
 <div class="container">
   <div class="row">
     <div class="col-md-6 px-3 py-3">
       <img src="{{ moviesId.image }}" class="img img-responsive" />
     </div>
     <div class="col-md-6 px-3 py-3">
-      <h1><strong>{{ moviesId.title }}</strong></h1>
-    <h4 class="synopsis mb-3">{{ moviesId.synopsis }}</h4>
-      <h6 class="mb-3">Duration: {{ moviesId.duration }}</h6>
-      <h6 class="mb-3">Category: {{ moviesId.category.name }}</h6>
-      <h6 class="mb-3">Language: {{ moviesId.language.tag }}</h6>
-      <h6 class="mb-3">Category: Date: {{ moviesId.date }}</h6>
+      <h1 tabindex="0"><strong>{{ moviesId.title }}</strong></h1>
+    <h4 class="synopsis mb-3" tabindex="0">{{ moviesId.synopsis }}</h4>
+      <h6 class="mb-3" tabindex="0">Duration: {{ moviesId.duration }}</h6>
+      <h6 class="mb-3" tabindex="0">Category: {{ moviesId.category.name }}</h6>
+      <h6 class="mb-3" tabindex="0">Language: {{ moviesId.language.tag }}</h6>
+      <h6 class="mb-3" tabindex="0">Category: Date: {{ moviesId.date }}</h6>
     </div>
   </div>
 </div>

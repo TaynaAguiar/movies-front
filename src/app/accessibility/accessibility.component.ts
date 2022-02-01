@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MenuComponent } from '../menu/menu.component';
 
 @Component({
@@ -7,16 +7,41 @@ import { MenuComponent } from '../menu/menu.component';
   styleUrls: ['./accessibility.component.css'],
 })
 export class AccessibilityComponent implements OnInit {
+  font_size = 16;
+
   constructor() {}
 
-  ngOnInit(): void {
-   
+  ngOnInit(): void {}
+
+  getFocusMenu() {
+    document.getElementById('home')?.focus();
+  }
+  getFocusContent() {
+    document.getElementById('content')?.focus();
+  }
+  getFocusAccessibility() {
+    document.getElementById('accessibility')?.focus();
   }
 
-  getFocus() {
-    document.getElementById("home")?.focus(); 
-    // setTimeout(() => {
-    //  const teste2: HTMLElement | null = document.getElementById('home').style.color = '#fff';
-    // }, 200);
+  setFontSize(idd: string) {
+    if (idd === 'a+') {
+      this.font_size += 1;
+    } else if (idd === 'a-') {
+      this.font_size -= 1;
+    } else {
+      this.font_size = 16;
+    }
+
+    let htmlRoot: HTMLElement = <HTMLElement>(
+      document.getElementsByTagName('body')[0]
+    );
+    if (htmlRoot != null) {
+      htmlRoot.style.fontSize = `${this.font_size}px`;
+    }
+  }
+
+  highContrast() {
+    let element: HTMLElement = document.getElementById('body') as HTMLElement;
+    element.classList.toggle('high-contrast');
   }
 }

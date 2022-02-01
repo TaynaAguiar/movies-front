@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
+import { CategoriesListComponent } from './categories-list/categories-list.component';
 import { FormCategoriesComponent } from './form-categories/form-categories.component';
 import { FormMovieComponent } from './form-movie/form-movie.component';
 import { FormUserComponent } from './form-user/form-user.component';
@@ -21,6 +22,7 @@ const routes: Routes = [
       { path: 'movies-users-list', component: UsersListComponent },
       { path: 'movies-users-register', component: FormUserComponent },
       { path: 'movies-users-update/:id', component: FormUserComponent },
+      { path: 'movies-categories', component: CategoriesListComponent },
       {
         path: 'movies-categories-register',
         component: FormCategoriesComponent,

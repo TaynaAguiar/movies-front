@@ -1,10 +1,92 @@
 body,
 html {
   font-family: 'Source Sans Pro', sans-serif;
+  height: 100%;
   background-color: lightgray;
+  font-size: 16px;
 }
 
 :root {
   --primary: #000;
   --secondary: #FFFFFF;
-} 
+}
+
+body.high-contrast {
+  background-color: black !important;
+  border-color: white;
+}
+
+.high-contrast div.acess,
+.high-contrast div#header {
+  border-bottom: 5px solid white;
+}
+
+.high-contrast div,
+.high-contrast nav,
+.high-contrast h1,
+.high-contrast td {
+  background-color: black !important;
+  color: white;
+  background-size: cover;
+}
+
+.high-contrast a,
+.high-contrast button {
+  color: yellow;
+  border-color: yellow;
+  background-color: #000;
+}
+
+.high-contrast input,
+.high-contrast textarea,
+.high-contrast select,
+.high-contrast option,
+.high-contrast select:focus,
+.high-contrast input:focus,
+.high-contrast textarea:focus {
+  background-color: black;
+  color: yellow;
+  border-color: yellow;
+}
+
+.high-contrast a:hover,
+.high-contrast button:hover{
+  color: black !important;
+  background-color: yellow;
+}
+
+.high-contrast ::placeholder {
+  color: white;
+}
+
+.high-contrast .img-acess-a,
+.high-contrast .img-acess{
+  filter: sepia(90%) saturate(500000%) contrast(1);
+}
+
+.high-contrast .btn-acess:hover {
+  background-color: yellow !important;
+  filter: none !important;
+}
+
+.high-contrast .img-acess:hover,
+.high-contrast .img-acess-a:hover {
+  filter: invert() !important;
+}
+
+.high-contrast span,
+.high-contrast span.valid {
+  color: yellow;
+  font-style: italic;
+}
+
+.high-contrast a#home.nav-link:focus,
+.high-contrast h1#content:focus {
+  border-color: yellow !important;
+  border-style: solid;
+}
+
+.high-contrast button#accessibility.btn-acess:focus{
+  border-color: yellow !important;
+  border-style: dashed;
+}

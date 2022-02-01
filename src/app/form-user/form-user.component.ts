@@ -28,19 +28,32 @@ export class FormUserComponent implements OnInit {
     console.log('route', this.route.snapshot.params['id']);
 
     this.postUsers = this.route.snapshot.params['movies-users-register'];
+
     console.log('route', this.route.snapshot.params['movies-users-register']);
 
     this.postUsers = this.fb.group({
       id: [''],
-      name: ['', [Validators.required]],
-      cpf: ['', [Validators.required]],
-      cellPhone: ['', [Validators.required]],
-      email: ['', [Validators.required]],
-      password: ['', [Validators.required]],
+      name: [
+        '',
+        Validators.compose([Validators.required, Validators.minLength(3)]),
+      ],
+      cpf: ['', Validators.compose([Validators.required])],
+      cellPhone: [
+        '',
+        [
+          Validators.required,
+        ],
+      ],
+      email: ['', Validators.compose([Validators.required, Validators.email])],
+      password: [
+        '',
+        Validators.compose([Validators.required, Validators.minLength(6)]),
+      ],
       profile: ['', [Validators.required]],
       language: ['', [Validators.required]],
     });
-
+    
+    
     this.getById();
     this.postUser();
     this.putUsers();

@@ -35,3 +35,8 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+#content:focus {
+  border-color: black !important;
+  border-style: solid;
+}

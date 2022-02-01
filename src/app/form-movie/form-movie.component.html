@@ -1,9 +1,8 @@
-<app-menu></app-menu>
-<h1 class="container" *ngIf="!moviesId"><strong>New Movie</strong></h1>
-<h1 class="container" *ngIf="moviesId"><strong>Edit Movie</strong></h1>
+<h1 class="container" *ngIf="!moviesId" tabindex="0"><strong>New Movie</strong></h1>
+<h1 class="container" *ngIf="moviesId" tabindex="0"><strong>Edit Movie</strong></h1>
 <form class="formMovie container" [formGroup]="postMovie">
   <div class="form-movie">
-    <label for="title">Title</label>
+    <label for="title" tabindex="0">Title</label>
     <input
       type="text"
       class="form-control"
@@ -11,9 +10,17 @@
       placeholder="Title"
       formControlName="title"
     />
+    <span
+      class="valid"
+      *ngIf="
+        postMovie.controls['title'].dirty &&
+        postMovie.hasError('required', 'title')
+      "
+      >Title is required</span
+    >
   </div>
   <div class="form-movie">
-    <label for="synopsis">Synopsis</label>
+    <label for="synopsis" tabindex="0">Synopsis</label>
     <textarea
       class="form-control"
       id="synopsis"
@@ -21,9 +28,17 @@
       rows="3"
       formControlName="synopsis"
     ></textarea>
+    <span
+      class="valid"
+      *ngIf="
+        postMovie.controls['synopsis'].dirty &&
+        postMovie.hasError('required', 'synopsis')
+      "
+      >Synopsis is required</span
+    >
   </div>
   <div class="form-movie">
-    <label for="url">Image</label>
+    <label for="url" tabindex="0">Image</label>
     <input
       type="text"
       class="form-control"
@@ -31,9 +46,17 @@
       placeholder="Image Url"
       formControlName="image"
     />
+    <span
+      class="valid"
+      *ngIf="
+        postMovie.controls['synopsis'].dirty &&
+        postMovie.hasError('required', 'image')
+      "
+      >Image is required</span
+    >
   </div>
   <div class="form-movie">
-    <label for="date">Date</label>
+    <label for="date" tabindex="0">Date</label>
     <input
       type="text"
       class="form-control"
@@ -41,9 +64,17 @@
       placeholder="Posting year"
       formControlName="date"
     />
+    <span
+      class="valid"
+      *ngIf="
+        postMovie.controls['date'].dirty &&
+        postMovie.hasError('required', 'date')
+      "
+      >Date is required</span
+    >
   </div>
   <div class="form-movie">
-    <label for="duration">Duration</label>
+    <label for="duration" tabindex="0">Duration</label>
     <input
       type="text"
       class="form-control"
@@ -51,9 +82,17 @@
       placeholder="Duration"
       formControlName="duration"
     />
+    <span
+      class="valid"
+      *ngIf="
+        postMovie.controls['duration'].dirty &&
+        postMovie.hasError('required', 'duration')
+      "
+      >Duration is required</span
+    >
   </div>
   <div class="form-movie">
-    <label for="language">Language</label>
+    <label for="language" tabindex="0">Language</label>
     <select
       [compareWith]="compareFn"
       class="form-control"
@@ -64,9 +103,17 @@
       <option value="" selected>Choose the Language</option>
       <option *ngFor="let l of listLanguages" [ngValue]="l">{{ l.tag }}</option>
     </select>
+    <span
+      class="valid"
+      *ngIf="
+        postMovie.controls['language'].dirty &&
+        postMovie.hasError('required', 'language')
+      "
+      >Language is required</span
+    >
   </div>
   <div class="form-movie">
-    <label for="category">Category</label>
+    <label for="category" tabindex="0">Category</label>
     <select
       [compareWith]="compareFn"
       class="form-control"
@@ -77,6 +124,14 @@
       <option value="" selected>Choose the category</option>
       <option *ngFor="let c of listCategory" [ngValue]="c">{{ c.name }}</option>
     </select>
+    <span
+      class="valid"
+      *ngIf="
+        postMovie.controls['category'].dirty &&
+        postMovie.hasError('required', 'category')
+      "
+      >Category is required</span
+    >
   </div>
 <div class="form-button form-movie">
   <button

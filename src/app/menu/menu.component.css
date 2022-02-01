@@ -44,6 +44,7 @@
   color: var(--secondary)
 }
 
-.teste:focus-visible {
-  color: red !important;
+#home:focus {
+  border-color: white !important;
+  border-style: solid;
 }

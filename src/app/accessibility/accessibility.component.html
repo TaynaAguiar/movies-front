@@ -4,19 +4,23 @@
       <div class="respon-cont">
         <ul class="navbar-nav">
           <li class="shortcuts nav-item navbar-collapse">
-            <button type="button" class="btn-acess">
+            <button type="button" class="btn-acess" (click)="getFocusContent()">
               <img class="img-acess-a" src="../../assets/K.svg" />
             </button>
             <div class="navbar-collapse">Skip to content</div>
           </li>
           <li class="shortcuts nav-item navbar-collapse">
-            <button type="button" class="btn-acess" (click)="getFocus()">
+            <button type="button" class="btn-acess" (click)="getFocusMenu()">
               <img class="img-acess-a" src="../../assets/Q.svg" />
             </button>
-            <div class="navbar-collapse" >Menu</div>
+            <div class="navbar-collapse">Menu</div>
           </li>
           <li class="shortcuts nav-item navbar-collapse">
-            <button type="button" class="btn-acess">
+            <button
+              type="button"
+              class="btn-acess"
+              (click)="getFocusAccessibility()"
+            >
               <img class="img-acess-a" src="../../assets/A.svg" />
             </button>
             <div class="navbar-collapse">Accessibility Shortcut</div>
@@ -26,22 +30,42 @@
       <div class="navbar-collapse justify-content-end" id="navbarNav">
         <ul class="resp navbar-nav">
           <li class="nav-item">
-            <button type="button" class="btn-acess">
+            <button
+              type="button"
+              class="btn-acess"
+              id="accessibility"
+              (click)="highContrast()"
+            >
               <img class="img-acess" src="../../assets/high-contrast.svg" />
             </button>
           </li>
           <li class="nav-item">
-            <button type="button" class="btn-acess">
+            <button
+              type="button"
+              class="btn-acess"
+              id="decrease-font"
+              (click)="setFontSize('a-')"
+            >
               <img class="img-acess" src="../../assets/decreaseFont.svg" />
             </button>
           </li>
           <li class="nav-item">
-            <button type="button" class="btn-acess">
+            <button
+              type="button"
+              class="btn-acess"
+              id="oring-font"
+              (click)="setFontSize('a')"
+            >
               <img class="img-acess" src="../../assets/A.svg" />
             </button>
           </li>
           <li class="nav-item">
-            <button type="button" class="btn-acess">
+            <button
+              type="button"
+              class="btn-acess"
+              id="increase-font"
+              (click)="setFontSize('a+')"
+            >
               <img class="img-acess" src="../../assets/increaseFont.svg" />
             </button>
           </li>
